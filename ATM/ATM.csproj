@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A4F5138-C711-4DC5-9745-6B2E36991CE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ATM</RootNamespace>
+    <AssemblyName>ATM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\ATMException.cs" />
+    <Compile Include="classes\ChangePin.cs" />
+    <Compile Include="classes\PrintTransaction.cs" />
+    <Compile Include="forms\changepin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\changepin.Designer.cs">
+      <DependentUpon>changepin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\ActiveUser.cs" />
+    <Compile Include="classes\Accounts.cs" />
+    <Compile Include="classes\Database.cs" />
+    <Compile Include="forms\keypad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\keypad.Designer.cs">
+      <DependentUpon>keypad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\newAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\newAccount.Designer.cs">
+      <DependentUpon>newAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\pin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\pin.Designer.cs">
+      <DependentUpon>pin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\primary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\primary.Designer.cs">
+      <DependentUpon>primary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Program.cs" />
+    <Compile Include="classes\Helper.cs" />
+    <Compile Include="classes\NewAccount.cs" />
+    <Compile Include="classes\KeyPad.cs" />
+    <Compile Include="classes\PinPad.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="forms\transfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\transfer.Designer.cs">
+      <DependentUpon>transfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\TransferMoney.cs" />
+    <EmbeddedResource Include="forms\changepin.resx">
+      <DependentUpon>changepin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\keypad.resx">
+      <DependentUpon>keypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\newAccount.resx">
+      <DependentUpon>newAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\pin.resx">
+      <DependentUpon>pin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\primary.resx">
+      <DependentUpon>primary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="forms\transfer.resx">
+      <DependentUpon>transfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
