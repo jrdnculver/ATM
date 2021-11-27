@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace ATM
 {
+    // Primary Form
     public partial class primary : Form
     {
         public static primary Primary;
